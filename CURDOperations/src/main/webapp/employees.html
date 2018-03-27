@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+
+    .c1{background-color: aqua}
+    .c2{background-color: chartreuse}
+    .c3{background-color: burlywood}
+    .c4{background-color: yellow}
+    
+    </style>
+</head>
+<body>
+	<h2 align="center">List of all Employee's</h2>
+
+
+	<input type="button" value="GetAllEmployees" ng-click="getAllEmp()"/>
+	
+	<table align="center" border="2">
+
+		<tr class="c4">
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>PhoneNumber</th>
+			<th>EmailID</th>
+			<th>Gender</th>
+		</tr>
+
+		<tr ng-model="n" ng-repeat="emp in Emplist | limitTo : n ", ng-class="{c1:$odd,c2:$even}">
+			<td>{{emp.firstName}}</td>
+			<td>{{emp.lastName}}</td>
+			<td>{{emp.phoneNumber}}</td>
+			<td>{{emp.emailId}}</td>
+			<td>{{emp.gender}}</td>
+		</tr>
+	</table>
+	<input type ="button" ng-click="n=n+5;" value="ShowMore"/>	
+</body>
+</html>

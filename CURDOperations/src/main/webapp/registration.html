@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+<style>
+.c1{color :Red}
+</style>
+</head>
+
+<body>
+
+
+<div>
+<form name ="myRegform" align="center">
+
+<table align="center">
+
+<tr>
+<td width="20%">FirstName:</td>
+<td width="40%"><input name ="fn" type = "text" ng-model="fname" ng-required="true"></td>
+<td width="40%"><span class="c1" ng-show ="myRegform.fn.$error.required && myRegform.fn.$dirty">
+First Name is required !!</span></td>
+</tr>
+
+<tr>
+<td width="20%">LastName:</td>
+<td width="40%"><input name ="ln" type ="text" ng-model="lname"  ng-required="true"></td>
+<td width="40%"><span class="c1" ng-show ="myRegform.ln.$error.required && myRegform.ln.$dirty">
+Last Name is required !!</span></td>
+</tr>
+
+<tr>
+<td width="20%">PhoneNumber:</td>
+<td width="40%"><input type="number" maxlength="10" phonenum" name="phnum" ng-required="true" ng-pattern="/^[0-9]*$/"></td>
+<td width="40%"><span class="c1" ng-show ="myRegform.phnum.$error.required && myRegform.phnum.$dirty">
+PhoneNumber should have 10 digits !!</span></td>
+</tr>
+
+<tr>
+<td width="20%">EmailID:</td>
+<td width="40%"><input name ="eid" ng-required="true" type ="email" ng-model="email"></td>
+<td width="40%"><span class="c1" ng-show ="myRegform.eid.$dirty && myRegform.eid.$error.email">
+Enter proper Email ID !!</span></td>
+</tr>
+
+
+<tr>
+<td>Gender:</td><td>
+<input type ="radio" ng-model="mygender" value="M" ng-required="!mygender">Male
+<input type ="radio" ng-model="mygender" value="F" ng-required="!mygender">FeMale
+</td>
+</tr>
+
+
+<tr align="center"><td colspan="2">
+<input type="button" value ="submit" ng-click="registeruser()" ng-disabled="myRegform.$invalid"></td>
+</tr>
+
+</table>
+</form>
+</div>
+</body>
+</html>

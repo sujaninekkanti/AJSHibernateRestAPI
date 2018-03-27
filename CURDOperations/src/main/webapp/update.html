@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.c1{color :Red}
+</style>
+</head>
+<body>
+<h2 style="color:blue;">Update your phone number here....  </h2>
+<div>
+
+<form name ="myUpdateform" align="center">
+
+<table align="center">
+
+<tr>
+<td width="20%">FirstName:</td>
+<td width="40%"><input name ="fn" type = "text" ng-model="fname" ng-required="true"></td>
+<td width="40%"><span class="c1" ng-show ="myUpdateform.fn.$error.required && myUpdateform.fn.$dirty">
+First Name is required !!</span></td>
+</tr>
+
+<tr>
+<td width="20%">PhoneNumber:</td>
+<td width="40%"><input type="number" maxlength="10" phonenum" name="phnum" ng-required="true"></td>
+<td width="40%"><span class="c1" ng-show ="myUpdateform.phnum.$error.required && myUpdateform.phnum.$dirty">
+PhoneNumber should have 10 digits !!</span></td>
+</tr>
+
+<tr align="center"><td colspan="2">
+<input type="button" value ="update" ng-click="updateuser()" ng-disabled="myUpdateform.$invalid"></td>
+</tr>
+
+</table>
+
+</form>
+</div>
+
+</body>
+</html>
