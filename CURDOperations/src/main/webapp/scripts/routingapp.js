@@ -65,9 +65,7 @@ $routeProvider.when("/home",{
 					}
 					
 					).then(function(result){
-
-					$scope.JsonProductList = result.data;
-					
+			
 					$window.alert("Registration Success..!!!")
 					
 				}, function(result) {
@@ -100,8 +98,8 @@ app.controller("myUpdateCtrl",function($scope, $http, $window){
 					}
 					
 					).then(function(result){
-
-					$scope.JsonProductList = result.data;
+	
+					$window.alert("Updation Success..!!!")
 					
 				}, function(result) {
 
@@ -160,7 +158,7 @@ app.controller("myDeleteCtrl",function($scope, $http, $window){
 						
 						).then(function(result){
 
-						$scope.JsonProductList = result.data;
+						$window.alert("Deletion Success..!!!")
 						
 					}, function(result) {
 

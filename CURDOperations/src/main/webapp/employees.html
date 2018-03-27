@@ -7,9 +7,9 @@
 <style>
 
     .c1{background-color: aqua}
-    .c2{background-color: chartreuse}
-    .c3{background-color: burlywood}
-    .c4{background-color: yellow}
+    .c2{background-color: #ead5f2}
+    .c3{background-color: #f5eff7}
+    .c4{background-color: #dda7ef}
     
     </style>
 </head>
@@ -29,7 +29,7 @@
 			<th>Gender</th>
 		</tr>
 
-		<tr ng-model="n" ng-repeat="emp in Emplist | limitTo : n ", ng-class="{c1:$odd,c2:$even}">
+		<tr ng-model="n" ng-repeat="emp in Emplist", ng-class="{c2:$odd,c3:$even}">
 			<td>{{emp.firstName}}</td>
 			<td>{{emp.lastName}}</td>
 			<td>{{emp.phoneNumber}}</td>
@@ -37,6 +37,5 @@
 			<td>{{emp.gender}}</td>
 		</tr>
 	</table>
-	<input type ="button" ng-click="n=n+5;" value="ShowMore"/>	
 </body>
 </html>
