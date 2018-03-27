@@ -69,6 +69,26 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		
 		return employees;
 	}
+
+	@Override
+	public int deleteEmployee(String firstName) {
+		
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Employee employee = (Employee) session.get(Employee.class,firstName);
+		
+		employee.setFirstName(firstName);
+		session.delete(employee);
+		
+		transaction.commit();
+		session.close();
+		
+		return 1;
+	}
+	
+	
 	
 
 }

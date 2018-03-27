@@ -72,4 +72,20 @@ public class MyService {
 		return empbo;
 		
 	}
+	
+	@POST
+	@Path("/delete")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String deleteEmployee(MyJaxBean input) throws Exception{
+		
+		EmployeeService employeeservice = new EmployeeServiceImpl();
+		
+		int result = employeeservice.deleteEmployee(input.firstname);
+		
+		if(result ==1){
+			return "SUCCESS";
+		}
+		
+		return "FAILURE..";
+	}
 }

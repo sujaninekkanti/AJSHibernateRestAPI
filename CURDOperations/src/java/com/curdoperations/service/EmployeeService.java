@@ -11,4 +11,6 @@ public interface EmployeeService {
 	public int updateEmployeePhoneNumber(long phoneNumber,String firstName);
 	
 	public List getAllEmployees();
+	
+	public int deleteEmployee(String firstName);
 }

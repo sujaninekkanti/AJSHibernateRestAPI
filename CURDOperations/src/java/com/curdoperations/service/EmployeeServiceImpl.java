@@ -52,5 +52,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 		return employeelist;
 	}
+
+	@Override
+	public int deleteEmployee(String firstName) {
+
+		EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+		
+		int result = employeeDAO.deleteEmployee(firstName);
+		
+		return result;
+	}
 	
 }

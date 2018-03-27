@@ -29,6 +29,12 @@ $routeProvider.when("/home",{
 })
 
 
+.when("/delete",{
+	templateUrl :"delete.html",
+	controller:	"myDeleteCtrl"
+})
+
+
 .otherwise({redirectTo:"/"});
 
 });
@@ -129,8 +135,39 @@ app.controller("getAllEmployeeCtrl",function($scope, $http, $window){
 						$window.alert("ajax failed in updation")
 					});
 	}
-		});
+		
+});
 
+app.controller("myDeleteCtrl",function($scope, $http, $window){
+	
+	 $scope.deleteUser = function(){
+				
+				var parameter = JSON.stringify({
+				
+				firstname : $scope.fname,
+				     
+				})
+			
+				$http({
+							method: 'POST',
+							url:'http://localhost:8080/CURDOperations/operations/rest/delete',
+							data: parameter,
+							headers:
+							{
+								'Content-Type':'application/json'
+							}
+						}
+						
+						).then(function(result){
+
+						$scope.JsonProductList = result.data;
+						
+					}, function(result) {
+
+						$window.alert("ajax failed in updation")
+					});
+	}
+		});
 
 	
 	
